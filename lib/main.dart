@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,32 +13,68 @@ class BusinessCard extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,  // espalhado na tela
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                color: Colors.red,
-                width: 100.0,
+              const CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('images/rodrigo.jpeg'),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    color: Colors.yellow,
-                    width: 100.0,
-                    height: 100.0,
+              const Text(
+                'Rodrigo Gregori',
+                style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Pacifico',
+                ),
+              ),
+              Text(
+                'PROFESSOR UNIVERSITÁRIO',
+                style: TextStyle(
+                  color: Colors.teal[100],
+                  fontSize: 20.0,
+                  fontFamily: 'Source Sans Pro',
+                  letterSpacing: 2.5,
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal[100],
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal[900],
                   ),
-                  Container(
-                    color: Colors.lightGreen,
-                    width: 100.0,
-                    height: 100.0,
+                  title: Text(
+                    '47 99999-9999',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.teal[900],
+                        fontFamily: 'Source Sans Pro'),
                   ),
-                ],
+                ),
               ),
-              Container(
-                color: Colors.blue,
-                width: 100.0,
-              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal[900],
+                  ),
+                  title: Text(
+                    'rodrigo.gregori@catolicasc.org.br',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.teal[900],
+                        fontFamily: 'Source Sans Pro'),
+                  ),
+                ),
+              )
             ],
           ),
         ),
